@@ -25,7 +25,7 @@ public class TodoServiceImpl implements TodoService {
 
     public Todo completeTodo(Long id){
         TodoEntity todo = todoRepo.findById(id).get();
-        todo.setCompleted(!todo.isCompleted());
+        todo.setCompleted(!todo.getCompleted());
         return Todo.toModel(todoRepo.save(todo));
     }
 }

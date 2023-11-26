@@ -10,7 +10,7 @@ public class Todo {
     public static Todo toModel(TodoEntity entity){
         Todo model = new Todo();
         model.setId(entity.getId());
-        model.setCompleted(entity.isCompleted());
+        model.setCompleted(entity.getCompleted());
         model.setTitle(entity.getTitle());
         return model;
     }
