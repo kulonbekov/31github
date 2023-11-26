@@ -3,6 +3,7 @@ package com.kulonbekov.springrestapi.entity;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "todos")
 public class TodoEntity {
 
     @Id
@@ -10,8 +11,9 @@ public class TodoEntity {
     private Long id;
     private String title;
     private Boolean completed;
+    private String description;
     @ManyToOne
-    @JoinColumn(name="user_id")
+    @JoinColumn(name = "user_id")
     private UserEntity user;
 
     public TodoEntity() {
@@ -33,12 +35,20 @@ public class TodoEntity {
         this.title = title;
     }
 
-    public boolean isCompleted() {
+    public Boolean getCompleted() {
         return completed;
     }
 
-    public void setCompleted(boolean completed) {
+    public void setCompleted(Boolean completed) {
         this.completed = completed;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public UserEntity getUser() {
@@ -49,3 +59,5 @@ public class TodoEntity {
         this.user = user;
     }
 }
+
+
