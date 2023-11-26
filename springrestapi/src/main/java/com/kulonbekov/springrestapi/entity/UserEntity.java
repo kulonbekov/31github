@@ -25,6 +25,14 @@ public class UserEntity {
         this.id = id;
     }
 
+    public List<TodoEntity> getTodos() {
+        return todos;
+    }
+
+    public void setTodos(List<TodoEntity> todos) {
+        this.todos = todos;
+    }
+
     public String getUsername() {
         return username;
     }
