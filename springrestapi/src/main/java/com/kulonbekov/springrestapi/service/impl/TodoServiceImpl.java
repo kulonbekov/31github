@@ -2,6 +2,7 @@ package com.kulonbekov.springrestapi.service.impl;
 
 import com.kulonbekov.springrestapi.entity.TodoEntity;
 import com.kulonbekov.springrestapi.entity.UserEntity;
+import com.kulonbekov.springrestapi.model.Todo;
 import com.kulonbekov.springrestapi.repository.TodoRepo;
 import com.kulonbekov.springrestapi.repository.UserRepo;
 import com.kulonbekov.springrestapi.service.TodoService;
@@ -16,15 +17,15 @@ public class TodoServiceImpl implements TodoService {
     @Autowired
     private UserRepo userRepo;
 
-    public TodoEntity createTodo(TodoEntity todo, Long userId){
+    public Todo createTodo(TodoEntity todo, Long userId){
         UserEntity user = userRepo.findById(userId).get();
         todo.setUser(user);
-        return todoRepo.save(todo);
+        return Todo.toModel(todoRepo.save(todo));
     }
 
-    public TodoEntity completeTodo(Long id){
+    public Todo completeTodo(Long id){
         TodoEntity todo = todoRepo.findById(id).get();
         todo.setCompleted(!todo.isCompleted());
-        return todoRepo.save(todo);
+        return Todo.toModel(todoRepo.save(todo));
     }
 }

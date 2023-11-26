@@ -9,7 +9,7 @@ public class TodoEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String title;
-    private boolean completed;
+    private Boolean completed;
     @ManyToOne
     @JoinColumn(name="user_id")
     private UserEntity user;

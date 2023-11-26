@@ -2,18 +2,31 @@ package com.kulonbekov.springrestapi.model;
 
 import com.kulonbekov.springrestapi.entity.UserEntity;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 public class User {
     private Long id;
     private String username;
+    private List<Todo> todos;
 
 
-    public static User toModel(UserEntity user){
+    public static User toModel(UserEntity entity){
         User model = new User();
-        model.setId(user.getId());
-        model.setUsername(user.getUsername());
+        model.setId(entity.getId());
+        model.setUsername(entity.getUsername());
+        model.setTodos(entity.getTodos().stream().map(Todo::toModel).collect(Collectors.toList()));
         return model;
     }
 
+
+    public List<Todo> getTodos() {
+        return todos;
+    }
+
+    public void setTodos(List<Todo> todos) {
+        this.todos = todos;
+    }
 
     public User() {
     }
