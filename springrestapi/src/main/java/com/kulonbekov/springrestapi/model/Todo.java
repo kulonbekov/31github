@@ -6,6 +6,7 @@ public class Todo {
     private Long id;
     private String title;
     private Boolean completed;
+    private String description;
 
     public static Todo toModel(TodoEntity entity){
         Todo model = new Todo();
