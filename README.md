@@ -1,4 +1,9 @@
 # 31github
 
-### Spring framework ПОЛНЫЙ КУРС для начинающих 2021 REST API
-https://www.youtube.com/watch?v=q87Xxu4NPIc&t=1610s
+1. November 25th
+2. November 26th
+3. November 27th
+4. November 28th
+5. November 29th
+6. November 30th
+7. December 1st
