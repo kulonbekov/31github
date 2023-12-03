@@ -8,4 +8,4 @@
 6. November 30th
 7. December 1st
 8. December 2nd
-9. 
+9. December 3rd
