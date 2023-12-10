@@ -24,6 +24,7 @@ dependencies {
 	runtimeOnly 'org.postgresql:postgresql'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation files('libs/declination-names-russion-and-kyrgyz-0.0.1-SNAPSHOT.jar')
 }
 
 tasks.named('bootBuildImage') {
